@@ -12,6 +12,8 @@ app.use(express.json());
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'build')));
 
+const metadataDir = process.env.METADATA_PATH || path.join(process.cwd(), "metadata")
+
 // API endpoint to get images from a directory
 app.get('/api/images', async (req, res) => {
   try {
@@ -73,7 +75,6 @@ app.post('/api/metadata', async (req, res) => {
       return res.status(400).json({ error: 'Filename and metadata are required' });
     }
 
-    const metadataDir = path.join(process.cwd(), 'metadata');
     await fs.ensureDir(metadataDir);
 
     const metadataFile = path.join(metadataDir, `${filename}_metadata.jsonl`);
@@ -92,7 +93,6 @@ app.post('/api/metadata', async (req, res) => {
 app.get('/api/metadata/:filename', async (req, res) => {
   try {
     const { filename } = req.params;
-    const metadataDir = path.join(process.cwd(), 'metadata');
     const metadataFile = path.join(metadataDir, `${filename}_metadata.jsonl`);
 
     if (!fs.existsSync(metadataFile)) {
@@ -112,8 +112,6 @@ app.get('/api/metadata/:filename', async (req, res) => {
 // API endpoint to export all metadata
 app.post('/api/export', async (req, res) => {
   try {
-    const metadataDir = path.join(process.cwd(), 'metadata');
-
     if (!fs.existsSync(metadataDir)) {
       return res.status(404).json({ error: 'No metadata directory found' });
     }
