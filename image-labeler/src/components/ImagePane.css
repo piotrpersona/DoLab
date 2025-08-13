@@ -8,7 +8,7 @@
   padding: 15px;
   border-bottom: 1px solid #374151;
   /* gray-700 */
-  background-color: #111827;
+  background-color: #1e1e1e;
   /* slate-900 */
 }
 
@@ -27,7 +27,7 @@
   justify-content: center;
   padding: 5px;
   overflow: auto;
-  background-color: #0f172a;
+  background-color: #1e1e1e;
   /* slate-950 */
 }
 

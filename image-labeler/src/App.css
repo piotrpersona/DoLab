@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #111827;
+  background-color: #1e1e1e;
   /* slate-900 */
   color: #e5e7eb;
   /* gray-200 */
@@ -25,7 +25,7 @@
 
 .image-pane {
   flex: 0 0 70%;
-  background-color: #0f172a;
+  background-color: #1e1e1e;
   /* slate-950 */
   border-right: 1px solid #374151;
   /* gray-700 */
@@ -36,7 +36,7 @@
 
 .json-pane {
   flex: 0 0 30%;
-  background-color: #0f172a;
+  background-color: #1e1e1e;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -50,7 +50,6 @@
   justify-content: center;
 }
 
-.save-button,
 .export-button {
   padding: 10px 20px;
   border: none;
@@ -60,29 +59,17 @@
   transition: background-color 0.2s;
 }
 
-.save-button {
-  background-color: #2563eb;
-  /* blue-600 */
-  color: #f8fafc;
-}
-
-.save-button:hover {
-  background-color: #1d4ed8;
-  /* blue-700 */
-}
-
 .export-button {
-  background-color: #16a34a;
+  background-color: #66d4e5;
   /* green-600 */
-  color: #f8fafc;
+  color: #0b3054;
 }
 
 .export-button:hover {
-  background-color: #15803d;
+  background-color: #1e9fd7;
   /* green-700 */
 }
 
-.save-button:disabled,
 .export-button:disabled {
   background-color: #4b5563;
   /* gray-600 */
