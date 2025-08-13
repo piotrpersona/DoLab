@@ -185,6 +185,9 @@ function App() {
 
   const handleJsonChange = (json: string) => {
     setCurrentJson(json);
+    setTimeout(() => {
+      handleSave();
+    }, 1000);
   };
 
   const currentImage = images[currentImageIndex];
@@ -200,12 +203,10 @@ function App() {
         />
       )}
       <div className="app-container">
-        <div className="image-pane">
-          <ImagePane
-            imagePath={currentImage}
-            imageName={imageName}
-          />
-        </div>
+        <ImagePane
+          imagePath={currentImage}
+          imageName={imageName}
+        />
         <div className="json-pane">
           <JsonEditor
             value={currentJson}

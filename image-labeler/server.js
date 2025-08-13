@@ -79,7 +79,7 @@ app.post('/api/metadata', async (req, res) => {
     const metadataFile = path.join(metadataDir, `${filename}_metadata.jsonl`);
     const metadataLine = JSON.stringify(metadata) + '\n';
 
-    await fs.appendFile(metadataFile, metadataLine);
+    await fs.writeFile(metadataFile, metadataLine);
 
     res.json({ success: true, message: 'Metadata saved successfully' });
   } catch (error) {
@@ -100,15 +100,7 @@ app.get('/api/metadata/:filename', async (req, res) => {
     }
 
     const content = await fs.readFile(metadataFile, 'utf8');
-    const lines = content.trim().split('\n');
-
-    if (lines.length === 0) {
-      return res.json({});
-    }
-
-    // Return the last line (most recent metadata)
-    const lastLine = lines[lines.length - 1];
-    const metadata = JSON.parse(lastLine);
+    const metadata = JSON.parse(content);
 
     res.json(metadata);
   } catch (error) {

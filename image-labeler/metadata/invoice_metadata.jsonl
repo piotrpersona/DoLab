@@ -1,0 +1,1 @@
+{"file_name":"/Users/piotrpersona/developer/github.com/piotrpersona/DoLab/datasets/example/invoice.jpg","ground_truth":"{\"gt_parse\":{\"amount\":\"$000.00\",\"items\":[{\"name\":\"item\",\"qty\":1,\"price\":\"$00.00\"}]}}"}
