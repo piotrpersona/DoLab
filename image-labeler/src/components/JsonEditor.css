@@ -1,0 +1,126 @@
+.json-editor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0f172a;
+  /* slate-950 */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.json-editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #111827;
+  /* slate-900 */
+  border-bottom: 1px solid #374151;
+  /* gray-700 */
+}
+
+.json-editor-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e5e7eb;
+  /* gray-200 */
+}
+
+.prettify-btn {
+  padding: 6px 12px;
+  background: #2563eb;
+  /* blue-600 */
+  color: #f8fafc;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.prettify-btn:hover:not(:disabled) {
+  background: #1d4ed8;
+  /* blue-700 */
+}
+
+.prettify-btn:disabled {
+  background: #4b5563;
+  /* gray-600 */
+  cursor: not-allowed;
+}
+
+.json-editor-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Ensure CodeMirror fills the content area */
+.json-editor-content .cm-editor {
+  height: 100%;
+}
+
+.json-editor-content .cm-scroller {
+  height: 100%;
+}
+
+/* Custom styling for json-edit-react */
+.json-editor-content .jsoneditor {
+  border: none;
+  height: 100% !important;
+}
+
+.json-editor-content .jsoneditor-outer {
+  height: 100% !important;
+}
+
+.json-editor-content .jsoneditor-menu {
+  background: #111827;
+  border-bottom: 1px solid #374151;
+}
+
+.json-editor-content .jsoneditor-statusbar {
+  background: #111827;
+  border-top: 1px solid #374151;
+}
+
+/* Textarea-based editor styles (restored) */
+.json-textarea {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #374151;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  resize: none;
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+.json-textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.35);
+}
+
+.json-textarea.invalid {
+  border-color: #b91c1c;
+  /* red-700 */
+  background-color: #7f1d1d;
+  /* red-900 */
+}
+
+.error-message {
+  color: #fecaca;
+  /* red-200 */
+  font-size: 0.8rem;
+  margin-top: 8px;
+  padding: 6px 8px;
+  background-color: #7f1d1d;
+  /* red-900 */
+  border: 1px solid #991b1b;
+  /* red-800 */
+  border-radius: 3px;
+}

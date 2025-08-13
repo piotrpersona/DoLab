@@ -1,0 +1,36 @@
+I want you to setup React application.
+The application will be used to label dataset of images with JSON objects.
+
+## Architecture
+This will be React Typescript application, that will start locally with the path to local directory.
+The local directory will be passed via envrionment variable and will be absolute path to directory with images.
+The application will start on localhost and display UI
+
+The application will display 2 panes.
+1st pane (70% width) - the image
+2nd pane (30% width) JSON text editor
+
+Above the image there will be displayed image basename.
+In the JSON editor it will be possible to submit only JSON-like objects.
+The edit should have option to prettify the JSON on demand.
+
+Below text editor there will be readonly text area that will display a single JSON record.
+A single json record will have 2 keys:
+- file_name, which is path to image
+- ground_truth which contains serialized one-line json.
+
+the ground truth should be in format:
+```json
+{
+    "gt_parse": {} // object that was types in the JSON text editor
+}
+```
+example metadata record
+```json
+{"file_name":"images/123.jpg","ground_truth":"{\\"gt_parse\\": {\\"amount\\": 1234.32}}"}
+```
+The user submits the record by "Save" button, which will save the record in local `metadata/` directory with filename `{image_filename}_metadata.sjonl`.
+
+User will navigate using buttons previous/next to select next photo and label it with JSON.
+
+Finally user will have option to press "Export" that will merge all lines of *_metadata.jsonl files into a single `metadata.jsonl` file and download it
