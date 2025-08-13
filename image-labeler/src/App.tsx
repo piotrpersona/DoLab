@@ -38,6 +38,8 @@ function App() {
           } catch (e) {
             console.error('Failed to parse existing metadata:', e);
           }
+        } else {
+          setCurrentJson('{\n  \n}');
         }
       }
     } catch (error) {
