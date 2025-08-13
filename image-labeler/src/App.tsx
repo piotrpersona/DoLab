@@ -4,7 +4,6 @@ import { ImageMetadata, GroundTruth } from './types';
 import ImagePane from './components/ImagePane';
 import JsonEditor from './components/JsonEditor';
 import NavigationControls from './components/NavigationControls';
-import MetadataDisplay from './components/MetadataDisplay';
 import AlertBanner from './components/AlertBanner';
 
 function App() {
@@ -211,10 +210,6 @@ function App() {
           <JsonEditor
             value={currentJson}
             onChange={handleJsonChange}
-          />
-          <MetadataDisplay
-            file_name={currentImage}
-            ground_truth={`{"gt_parse": ${currentJson}}`}
           />
           <div className="controls">
             <button onClick={handleExport} className="export-button">
